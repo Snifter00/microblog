@@ -20,7 +20,7 @@ def index():
     return render_template('index.html', title='Home', user=user, posts=posts)
 
 
-@app.route('/login', methods=['GET', 'POST'])  # override default. Except GET and POST
+@app.route('/login', methods=['GET', 'POST'])  # Accept GET and POST
 def login():
     form = LoginForm()
     if form.validate_on_submit():
