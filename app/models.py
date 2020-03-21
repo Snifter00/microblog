@@ -15,7 +15,7 @@ class User(db.Model):
 
     def __repr__(self):
         """This tells python how to print object of this class"""
-        return '<User {}.'.format(self.username)
+        return '<User {}>'.format(self.username)
 
 
 class Post(db.Model):
@@ -26,4 +26,3 @@ class Post(db.Model):
 
     def __repr__(self):
         return '<Post {}>'.format(self.body)
-
