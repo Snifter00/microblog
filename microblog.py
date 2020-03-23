@@ -1,3 +1,4 @@
+# This element defines the Flask application instance
 from app import app, db
 from app.models import User, Post
 
