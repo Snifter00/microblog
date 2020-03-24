@@ -17,6 +17,8 @@ class User(UserMixin, db.Model):
     password_hash = db.Column(db.String(128))
     # __tablename__= string to overide default snake_case table name, e.g. 'user'
     posts = db.relationship('Post', backref='author', lazy='dynamic')
+    about_me = db.Column(db.String(140))
+    last_seen = db.Column(db.DateTime, default=datetime.utcnow)
 
     def __repr__(self):
         """This tells python how to print object of this class"""
