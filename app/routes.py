@@ -83,7 +83,7 @@ def user(username):
     return render_template('user.html', user=user, posts=posts)
 
 
-@app.route('/edit_profile', methods=['GET', 'POS'])
+@app.route('/edit_profile', methods=['GET', 'POST'])
 @login_required
 def edit_profile():
     form = EditProfileForm()
