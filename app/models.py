@@ -6,6 +6,7 @@ from app import login
 from hashlib import md5
 
 # The following sets up an auxillary 'association table'.
+# This is needed to relate Users to other Users.
 followers = db.Table('followers',
                      db.Column('follower_id', db.Integer, db.ForeignKey('user.id')),
                      db.Column('followed_id', db.Integer, db.ForeignKey('user.id'))
@@ -29,7 +30,7 @@ class User(UserMixin, db.Model):
     followed = db.relationship(
         'User', secondary=followers,
         primaryjoin=(followers.c.follower_id == id),
-        secondaryjoin=(followers.cfollowed_id == id),
+        secondaryjoin=(followers.c.followed_id == id),
         backref=db.backref('followers', lazy='dynamic'), lazy='dynamic')
 
     def __repr__(self):
