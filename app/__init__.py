@@ -5,6 +5,7 @@ from flask_migrate import Migrate
 from flask_login import LoginManager
 import logging
 from logging.handlers import SMTPHandler, RotatingFileHandler
+from app import routes, models, errors
 import os
 
 app = Flask(__name__)
@@ -41,5 +42,3 @@ if not app.debug:
 
     app.logger.setLevel(logging.INFO)
     app.logger.info('Microblog startup')
-
-from app import routes, models, errors

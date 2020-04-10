@@ -128,6 +128,7 @@ def unfollow(username):
     flash('You are not following {}.'.format(username))
     return redirect(url_for('user', username=username))
 
+
 @app.route('/explore')
 @login_required
 def explore():
