@@ -82,3 +82,6 @@ Traceback (most recent call last):
     {% include '_post.html %}
 jinja2.exceptions.TemplateSyntaxError: unexpected char "'" at 532
 2020-04-10 23:03:14,873 INFO: Microblog startup [in C:\Users\GK616PH\Documents\Data Analytics\Python\Flask projects\microblog\app\__init__.py:43]
+2020-04-10 23:35:18,667 INFO: Microblog startup [in C:\Users\GK616PH\Documents\Data Analytics\Python\Flask projects\microblog\app\__init__.py:44]
+2020-04-10 23:40:23,159 INFO: Microblog startup [in C:\Users\GK616PH\Documents\Data Analytics\Python\Flask projects\microblog\app\__init__.py:44]
+2020-04-10 23:43:37,880 INFO: Microblog startup [in C:\Users\GK616PH\Documents\Data Analytics\Python\Flask projects\microblog\app\__init__.py:44]
