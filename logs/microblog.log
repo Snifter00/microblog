@@ -38,3 +38,4 @@ jinja2.exceptions.TemplateSyntaxError: Encountered unknown tag 'else'. Jinja was
 2020-04-11 20:02:28,558 INFO: Microblog startup [in C:\Users\GK616PH\Documents\Data Analytics\Python\Flask projects\microblog\app\__init__.py:43]
 2020-04-11 20:33:48,152 INFO: Microblog startup [in C:\Users\GK616PH\Documents\Data Analytics\Python\Flask projects\microblog\app\__init__.py:43]
 2020-04-11 20:36:37,083 INFO: Microblog startup [in C:\Users\GK616PH\Documents\Data Analytics\Python\Flask projects\microblog\app\__init__.py:43]
+2020-04-11 20:51:20,341 INFO: Microblog startup [in C:\Users\GK616PH\Documents\Data Analytics\Python\Flask projects\microblog\app\__init__.py:43]
