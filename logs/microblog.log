@@ -1,4 +1,4 @@
-2020-04-10 23:56:51,929 ERROR: Exception on /index [GET] [in c:\users\gk616ph\documents\data analytics\python\flask projects\microblog\env\lib\site-packages\flask\app.py:1891]
+2020-04-11 20:00:54,728 ERROR: Exception on /user/neil [GET] [in c:\users\gk616ph\documents\data analytics\python\flask projects\microblog\env\lib\site-packages\flask\app.py:1891]
 Traceback (most recent call last):
   File "c:\users\gk616ph\documents\data analytics\python\flask projects\microblog\env\lib\site-packages\flask\app.py", line 2446, in wsgi_app
     response = self.full_dispatch_request()
@@ -14,8 +14,8 @@ Traceback (most recent call last):
     return self.view_functions[rule.endpoint](**req.view_args)
   File "c:\users\gk616ph\documents\data analytics\python\flask projects\microblog\env\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
     return func(*args, **kwargs)
-  File "C:\Users\GK616PH\Documents\Data Analytics\Python\Flask projects\microblog\app\routes.py", line 30, in index
-    page, app.config['POSTS_PER_PAGE'], False)
+  File "C:\Users\GK616PH\Documents\Data Analytics\Python\Flask projects\microblog\app\routes.py", line 105, in user
+    next_url=next_url, prev_url=prev_url)
   File "c:\users\gk616ph\documents\data analytics\python\flask projects\microblog\env\lib\site-packages\flask\templating.py", line 138, in render_template
     ctx.app.jinja_env.get_or_select_template(template_name_or_list),
   File "c:\users\gk616ph\documents\data analytics\python\flask projects\microblog\env\lib\site-packages\jinja2\environment.py", line 930, in get_or_select_template
@@ -32,7 +32,9 @@ Traceback (most recent call last):
     reraise(*rewrite_traceback_stack(source=source))
   File "c:\users\gk616ph\documents\data analytics\python\flask projects\microblog\env\lib\site-packages\jinja2\_compat.py", line 28, in reraise
     raise value.with_traceback(tb)
-  File "C:\Users\GK616PH\Documents\Data Analytics\Python\Flask projects\microblog\app\templates\index.html", line 19, in template
-    {% include '_post.html %}
-jinja2.exceptions.TemplateSyntaxError: unexpected char "'" at 532
-2020-04-11 00:00:47,007 INFO: Microblog startup [in C:\Users\GK616PH\Documents\Data Analytics\Python\Flask projects\microblog\app\__init__.py:43]
+  File "C:\Users\GK616PH\Documents\Data Analytics\Python\Flask projects\microblog\app\templates\user.html", line 18, in template
+    {% else %}
+jinja2.exceptions.TemplateSyntaxError: Encountered unknown tag 'else'. Jinja was looking for the following tags: 'endif'. The innermost block that needs to be closed is 'if'.
+2020-04-11 20:02:28,558 INFO: Microblog startup [in C:\Users\GK616PH\Documents\Data Analytics\Python\Flask projects\microblog\app\__init__.py:43]
+2020-04-11 20:33:48,152 INFO: Microblog startup [in C:\Users\GK616PH\Documents\Data Analytics\Python\Flask projects\microblog\app\__init__.py:43]
+2020-04-11 20:36:37,083 INFO: Microblog startup [in C:\Users\GK616PH\Documents\Data Analytics\Python\Flask projects\microblog\app\__init__.py:43]
