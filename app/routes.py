@@ -154,6 +154,7 @@ def unfollow(username):
     flash('You are not following {}.'.format(username))
     return redirect(url_for('user', username=username))
 
+
 @app.route('/reset_password_request', methods=['GET', 'POST'])
 def reset_password_request():
     if current_user.is_authenticated:
