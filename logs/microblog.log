@@ -92,3 +92,4 @@ werkzeug.routing.BuildError: Could not build url for endpoint 'reset_password_re
 2020-04-26 23:11:36,235 INFO: Microblog startup [in C:\Users\GK616PH\Documents\Data Analytics\Python\Flask projects\microblog\app\__init__.py:45]
 2020-04-26 23:14:25,434 INFO: Microblog startup [in C:\Users\GK616PH\Documents\Data Analytics\Python\Flask projects\microblog\app\__init__.py:45]
 2020-04-26 23:16:39,505 INFO: Microblog startup [in C:\Users\GK616PH\Documents\Data Analytics\Python\Flask projects\microblog\app\__init__.py:45]
+2020-05-06 21:36:49,891 INFO: Microblog startup [in C:\Users\GK616PH\Documents\Data Analytics\Python\Flask projects\microblog\app\__init__.py:45]
