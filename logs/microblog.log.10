@@ -1,12 +1,4 @@
-2020-03-29 21:20:52,024 INFO: Microblog startup [in C:\Users\GK616PH\Documents\Data Analytics\Python\Flask projects\microblog\app\__init__.py:43]
-2020-04-04 20:15:02,011 INFO: Microblog startup [in C:\Users\GK616PH\Documents\Data Analytics\Python\Flask projects\microblog\app\__init__.py:43]
-2020-04-04 20:15:23,443 INFO: Microblog startup [in C:\Users\GK616PH\Documents\Data Analytics\Python\Flask projects\microblog\app\__init__.py:43]
-2020-04-07 22:13:29,828 INFO: Microblog startup [in C:\Users\GK616PH\Documents\Data Analytics\Python\Flask projects\microblog\app\__init__.py:43]
-2020-04-07 22:27:16,112 INFO: Microblog startup [in C:\Users\GK616PH\Documents\Data Analytics\Python\Flask projects\microblog\app\__init__.py:43]
-2020-04-07 22:32:23,552 INFO: Microblog startup [in C:\Users\GK616PH\Documents\Data Analytics\Python\Flask projects\microblog\app\__init__.py:43]
-2020-04-07 22:33:28,558 INFO: Microblog startup [in C:\Users\GK616PH\Documents\Data Analytics\Python\Flask projects\microblog\app\__init__.py:43]
-2020-04-10 22:49:58,273 INFO: Microblog startup [in C:\Users\GK616PH\Documents\Data Analytics\Python\Flask projects\microblog\app\__init__.py:43]
-2020-04-10 22:50:06,649 ERROR: Exception on / [GET] [in c:\users\gk616ph\documents\data analytics\python\flask projects\microblog\env\lib\site-packages\flask\app.py:1891]
+2020-04-10 23:56:20,817 ERROR: Exception on / [GET] [in c:\users\gk616ph\documents\data analytics\python\flask projects\microblog\env\lib\site-packages\flask\app.py:1891]
 Traceback (most recent call last):
   File "c:\users\gk616ph\documents\data analytics\python\flask projects\microblog\env\lib\site-packages\flask\app.py", line 2446, in wsgi_app
     response = self.full_dispatch_request()
@@ -23,7 +15,7 @@ Traceback (most recent call last):
   File "c:\users\gk616ph\documents\data analytics\python\flask projects\microblog\env\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
     return func(*args, **kwargs)
   File "C:\Users\GK616PH\Documents\Data Analytics\Python\Flask projects\microblog\app\routes.py", line 30, in index
-    posts=posts)
+    page, app.config['POSTS_PER_PAGE'], False)
   File "c:\users\gk616ph\documents\data analytics\python\flask projects\microblog\env\lib\site-packages\flask\templating.py", line 138, in render_template
     ctx.app.jinja_env.get_or_select_template(template_name_or_list),
   File "c:\users\gk616ph\documents\data analytics\python\flask projects\microblog\env\lib\site-packages\jinja2\environment.py", line 930, in get_or_select_template
@@ -43,8 +35,7 @@ Traceback (most recent call last):
   File "C:\Users\GK616PH\Documents\Data Analytics\Python\Flask projects\microblog\app\templates\index.html", line 19, in template
     {% include '_post.html %}
 jinja2.exceptions.TemplateSyntaxError: unexpected char "'" at 532
-2020-04-10 22:55:21,509 INFO: Microblog startup [in C:\Users\GK616PH\Documents\Data Analytics\Python\Flask projects\microblog\app\__init__.py:43]
-2020-04-10 22:55:26,663 ERROR: Exception on / [GET] [in c:\users\gk616ph\documents\data analytics\python\flask projects\microblog\env\lib\site-packages\flask\app.py:1891]
+2020-04-10 23:56:32,137 ERROR: Exception on /index [GET] [in c:\users\gk616ph\documents\data analytics\python\flask projects\microblog\env\lib\site-packages\flask\app.py:1891]
 Traceback (most recent call last):
   File "c:\users\gk616ph\documents\data analytics\python\flask projects\microblog\env\lib\site-packages\flask\app.py", line 2446, in wsgi_app
     response = self.full_dispatch_request()
@@ -61,7 +52,7 @@ Traceback (most recent call last):
   File "c:\users\gk616ph\documents\data analytics\python\flask projects\microblog\env\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
     return func(*args, **kwargs)
   File "C:\Users\GK616PH\Documents\Data Analytics\Python\Flask projects\microblog\app\routes.py", line 30, in index
-    posts=posts)
+    page, app.config['POSTS_PER_PAGE'], False)
   File "c:\users\gk616ph\documents\data analytics\python\flask projects\microblog\env\lib\site-packages\flask\templating.py", line 138, in render_template
     ctx.app.jinja_env.get_or_select_template(template_name_or_list),
   File "c:\users\gk616ph\documents\data analytics\python\flask projects\microblog\env\lib\site-packages\jinja2\environment.py", line 930, in get_or_select_template
@@ -81,9 +72,3 @@ Traceback (most recent call last):
   File "C:\Users\GK616PH\Documents\Data Analytics\Python\Flask projects\microblog\app\templates\index.html", line 19, in template
     {% include '_post.html %}
 jinja2.exceptions.TemplateSyntaxError: unexpected char "'" at 532
-2020-04-10 23:03:14,873 INFO: Microblog startup [in C:\Users\GK616PH\Documents\Data Analytics\Python\Flask projects\microblog\app\__init__.py:43]
-2020-04-10 23:35:18,667 INFO: Microblog startup [in C:\Users\GK616PH\Documents\Data Analytics\Python\Flask projects\microblog\app\__init__.py:44]
-2020-04-10 23:40:23,159 INFO: Microblog startup [in C:\Users\GK616PH\Documents\Data Analytics\Python\Flask projects\microblog\app\__init__.py:44]
-2020-04-10 23:43:37,880 INFO: Microblog startup [in C:\Users\GK616PH\Documents\Data Analytics\Python\Flask projects\microblog\app\__init__.py:44]
-2020-04-10 23:46:59,636 INFO: Microblog startup [in C:\Users\GK616PH\Documents\Data Analytics\Python\Flask projects\microblog\app\__init__.py:44]
-2020-04-10 23:53:14,992 INFO: Microblog startup [in C:\Users\GK616PH\Documents\Data Analytics\Python\Flask projects\microblog\app\__init__.py:43]
