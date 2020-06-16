@@ -1,38 +1,47 @@
-2020-05-07 22:16:32,480 ERROR: Exception on / [GET] [in c:\users\gk616ph\documents\data analytics\python\flask projects\microblog\env\lib\site-packages\flask\app.py:1891]
+2020-06-16 21:59:33,220 ERROR: Exception on /favicon.ico [GET] [in c:\users\gk616ph\documents\data analytics\python\flask projects\microblog\env\lib\site-packages\flask\app.py:1891]
+Traceback (most recent call last):
+  File "c:\users\gk616ph\documents\data analytics\python\flask projects\microblog\env\lib\site-packages\flask\app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\gk616ph\documents\data analytics\python\flask projects\microblog\env\lib\site-packages\flask\app.py", line 1925, in dispatch_request
+    self.raise_routing_exception(req)
+  File "c:\users\gk616ph\documents\data analytics\python\flask projects\microblog\env\lib\site-packages\flask\app.py", line 1907, in raise_routing_exception
+    raise request.routing_exception
+  File "c:\users\gk616ph\documents\data analytics\python\flask projects\microblog\env\lib\site-packages\flask\ctx.py", line 350, in match_request
+    result = self.url_adapter.match(return_rule=True)
+  File "c:\users\gk616ph\documents\data analytics\python\flask projects\microblog\env\lib\site-packages\werkzeug\routing.py", line 1945, in match
+    raise NotFound()
+werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+
+During handling of the above exception, another exception occurred:
+
 Traceback (most recent call last):
   File "c:\users\gk616ph\documents\data analytics\python\flask projects\microblog\env\lib\site-packages\flask\app.py", line 2446, in wsgi_app
     response = self.full_dispatch_request()
   File "c:\users\gk616ph\documents\data analytics\python\flask projects\microblog\env\lib\site-packages\flask\app.py", line 1951, in full_dispatch_request
     rv = self.handle_user_exception(e)
-  File "c:\users\gk616ph\documents\data analytics\python\flask projects\microblog\env\lib\site-packages\flask\app.py", line 1820, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "c:\users\gk616ph\documents\data analytics\python\flask projects\microblog\env\lib\site-packages\flask\_compat.py", line 39, in reraise
-    raise value
-  File "c:\users\gk616ph\documents\data analytics\python\flask projects\microblog\env\lib\site-packages\flask\app.py", line 1949, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "c:\users\gk616ph\documents\data analytics\python\flask projects\microblog\env\lib\site-packages\flask\app.py", line 1935, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "c:\users\gk616ph\documents\data analytics\python\flask projects\microblog\env\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
-    return func(*args, **kwargs)
-  File "C:\Users\GK616PH\Documents\Data Analytics\Python\Flask projects\microblog\app\routes.py", line 39, in index
-    prev_url=prev_url)
-  File "c:\users\gk616ph\documents\data analytics\python\flask projects\microblog\env\lib\site-packages\flask\templating.py", line 138, in render_template
-    ctx.app.jinja_env.get_or_select_template(template_name_or_list),
-  File "c:\users\gk616ph\documents\data analytics\python\flask projects\microblog\env\lib\site-packages\jinja2\environment.py", line 930, in get_or_select_template
-    return self.get_template(template_name_or_list, parent, globals)
-  File "c:\users\gk616ph\documents\data analytics\python\flask projects\microblog\env\lib\site-packages\jinja2\environment.py", line 883, in get_template
-    return self._load_template(name, self.make_globals(globals))
-  File "c:\users\gk616ph\documents\data analytics\python\flask projects\microblog\env\lib\site-packages\jinja2\environment.py", line 857, in _load_template
-    template = self.loader.load(self, name, globals)
-  File "c:\users\gk616ph\documents\data analytics\python\flask projects\microblog\env\lib\site-packages\jinja2\loaders.py", line 129, in load
-    code = environment.compile(source, name, filename)
-  File "c:\users\gk616ph\documents\data analytics\python\flask projects\microblog\env\lib\site-packages\jinja2\environment.py", line 638, in compile
-    self.handle_exception(source=source_hint)
+  File "c:\users\gk616ph\documents\data analytics\python\flask projects\microblog\env\lib\site-packages\flask\app.py", line 1815, in handle_user_exception
+    return self.handle_http_exception(e)
+  File "c:\users\gk616ph\documents\data analytics\python\flask projects\microblog\env\lib\site-packages\flask\app.py", line 1743, in handle_http_exception
+    return handler(e)
+  File "C:\Users\GK616PH\Documents\Data Analytics\Python\Flask projects\microblog\app\errors.py", line 7, in not_found_error
+    return render_template('404.html'), 404
+  File "c:\users\gk616ph\documents\data analytics\python\flask projects\microblog\env\lib\site-packages\flask\templating.py", line 140, in render_template
+    ctx.app,
+  File "c:\users\gk616ph\documents\data analytics\python\flask projects\microblog\env\lib\site-packages\flask\templating.py", line 120, in _render
+    rv = template.render(context)
+  File "c:\users\gk616ph\documents\data analytics\python\flask projects\microblog\env\lib\site-packages\jinja2\environment.py", line 1090, in render
+    self.environment.handle_exception()
   File "c:\users\gk616ph\documents\data analytics\python\flask projects\microblog\env\lib\site-packages\jinja2\environment.py", line 832, in handle_exception
     reraise(*rewrite_traceback_stack(source=source))
   File "c:\users\gk616ph\documents\data analytics\python\flask projects\microblog\env\lib\site-packages\jinja2\_compat.py", line 28, in reraise
     raise value.with_traceback(tb)
-  File "C:\Users\GK616PH\Documents\Data Analytics\Python\Flask projects\microblog\app\templates\index.html", line 20, in template
-    <li class="next{% next_url %} disabled{% endif %}">
-jinja2.exceptions.TemplateSyntaxError: Encountered unknown tag 'next_url'. Jinja was looking for the following tags: 'endblock'. The innermost block that needs to be closed is 'block'.
-2020-05-07 22:19:58,308 INFO: Microblog startup [in C:\Users\GK616PH\Documents\Data Analytics\Python\Flask projects\microblog\app\__init__.py:47]
+  File "C:\Users\GK616PH\Documents\Data Analytics\Python\Flask projects\microblog\app\templates\404.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "c:\users\gk616ph\documents\data analytics\python\flask projects\microblog\env\lib\site-packages\jinja2\environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "c:\users\gk616ph\documents\data analytics\python\flask projects\microblog\env\lib\site-packages\jinja2\_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\GK616PH\Documents\Data Analytics\Python\Flask projects\microblog\app\templates\base.html", line 55, in template
+    {% endblock}
+jinja2.exceptions.TemplateSyntaxError: unexpected '}'
+2020-06-16 22:00:33,413 INFO: Microblog startup [in C:\Users\GK616PH\Documents\Data Analytics\Python\Flask projects\microblog\app\__init__.py:49]
