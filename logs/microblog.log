@@ -45,3 +45,26 @@ Traceback (most recent call last):
     {% endblock}
 jinja2.exceptions.TemplateSyntaxError: unexpected '}'
 2020-06-16 22:00:33,413 INFO: Microblog startup [in C:\Users\GK616PH\Documents\Data Analytics\Python\Flask projects\microblog\app\__init__.py:49]
+2020-06-16 23:14:07,212 INFO: Microblog startup [in C:\Users\GK616PH\Documents\Data Analytics\Python\Flask projects\microblog\app\__init__.py:52]
+2020-06-16 23:14:29,600 ERROR: Exception on / [GET] [in c:\users\gk616ph\documents\data analytics\python\flask projects\microblog\env\lib\site-packages\flask\app.py:1891]
+Traceback (most recent call last):
+  File "c:\users\gk616ph\documents\data analytics\python\flask projects\microblog\env\lib\site-packages\flask\app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\gk616ph\documents\data analytics\python\flask projects\microblog\env\lib\site-packages\flask\app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\gk616ph\documents\data analytics\python\flask projects\microblog\env\lib\site-packages\flask\app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\gk616ph\documents\data analytics\python\flask projects\microblog\env\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "c:\users\gk616ph\documents\data analytics\python\flask projects\microblog\env\lib\site-packages\flask\app.py", line 1947, in full_dispatch_request
+    rv = self.preprocess_request()
+  File "c:\users\gk616ph\documents\data analytics\python\flask projects\microblog\env\lib\site-packages\flask\app.py", line 2241, in preprocess_request
+    rv = func()
+  File "C:\Users\GK616PH\Documents\Data Analytics\Python\Flask projects\microblog\app\routes.py", line 18, in before_request
+    g.locale = str(get_locale())
+  File "c:\users\gk616ph\documents\data analytics\python\flask projects\microblog\env\lib\site-packages\flask_babel\__init__.py", line 251, in get_locale
+    rv = babel.locale_selector_func()
+  File "C:\Users\GK616PH\Documents\Data Analytics\Python\Flask projects\microblog\app\__init__.py", line 57, in get_locale
+    return request.accept_languages.best_match(app.config['LANGUAGES'])
+KeyError: 'LANGUAGES'
+2020-06-16 23:15:36,417 INFO: Microblog startup [in C:\Users\GK616PH\Documents\Data Analytics\Python\Flask projects\microblog\app\__init__.py:52]
