@@ -23,6 +23,9 @@ bootstrap = Bootstrap(app)
 moment = Moment(app)
 babel = Babel(app)
 
+from app.errors import bp as errors_bp
+app.register_blueprint(errors_bp)  # <-- added below the import to avoid circular dependencies
+
 if not app.debug:
     if app.config['MAIL_SERVER']:
         auth = None
@@ -57,4 +60,4 @@ def get_locale():
     return request.accept_languages.best_match(app.config['LANGUAGES'])
 
 
-from app import routes, models, errors
+from app import routes, models  # <-- removed 'errors' from this import
