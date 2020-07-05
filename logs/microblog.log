@@ -1,70 +1,56 @@
-2020-07-05 12:26:59,260 ERROR: Exception on /favicon.ico [GET] [in c:\users\gk616ph\documents\data analytics\python\flask projects\microblog\env\lib\site-packages\flask\app.py:1891]
+2020-07-05 22:20:13,345 ERROR: Exception on /auth/login [POST] [in c:\users\gk616ph\documents\data analytics\python\flask projects\microblog\venv\lib\site-packages\flask\app.py:1761]
 Traceback (most recent call last):
-  File "c:\users\gk616ph\documents\data analytics\python\flask projects\microblog\env\lib\site-packages\flask\app.py", line 1949, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "c:\users\gk616ph\documents\data analytics\python\flask projects\microblog\env\lib\site-packages\flask\app.py", line 1925, in dispatch_request
-    self.raise_routing_exception(req)
-  File "c:\users\gk616ph\documents\data analytics\python\flask projects\microblog\env\lib\site-packages\flask\app.py", line 1907, in raise_routing_exception
-    raise request.routing_exception
-  File "c:\users\gk616ph\documents\data analytics\python\flask projects\microblog\env\lib\site-packages\flask\ctx.py", line 350, in match_request
-    result = self.url_adapter.match(return_rule=True)
-  File "c:\users\gk616ph\documents\data analytics\python\flask projects\microblog\env\lib\site-packages\werkzeug\routing.py", line 1945, in match
-    raise NotFound()
-werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+  File "c:\users\gk616ph\documents\data analytics\python\flask projects\microblog\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1182, in _execute_context
+    context)
+  File "c:\users\gk616ph\documents\data analytics\python\flask projects\microblog\venv\lib\site-packages\sqlalchemy\engine\default.py", line 470, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.OperationalError: no such table: user
 
-During handling of the above exception, another exception occurred:
+The above exception was the direct cause of the following exception:
 
 Traceback (most recent call last):
-  File "c:\users\gk616ph\documents\data analytics\python\flask projects\microblog\env\lib\site-packages\flask\app.py", line 2446, in wsgi_app
+  File "c:\users\gk616ph\documents\data analytics\python\flask projects\microblog\venv\lib\site-packages\flask\app.py", line 2292, in wsgi_app
     response = self.full_dispatch_request()
-  File "c:\users\gk616ph\documents\data analytics\python\flask projects\microblog\env\lib\site-packages\flask\app.py", line 1951, in full_dispatch_request
+  File "c:\users\gk616ph\documents\data analytics\python\flask projects\microblog\venv\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
     rv = self.handle_user_exception(e)
-  File "c:\users\gk616ph\documents\data analytics\python\flask projects\microblog\env\lib\site-packages\flask\app.py", line 1815, in handle_user_exception
-    return self.handle_http_exception(e)
-  File "c:\users\gk616ph\documents\data analytics\python\flask projects\microblog\env\lib\site-packages\flask\app.py", line 1743, in handle_http_exception
-    return handler(e)
-  File "C:\Users\GK616PH\Documents\Data Analytics\Python\Flask projects\microblog\app\errors\handlers.py", line 8, in not_found_error
-    return render_template('errors/404.html'), 404
-  File "c:\users\gk616ph\documents\data analytics\python\flask projects\microblog\env\lib\site-packages\flask\templating.py", line 140, in render_template
-    ctx.app,
-  File "c:\users\gk616ph\documents\data analytics\python\flask projects\microblog\env\lib\site-packages\flask\templating.py", line 120, in _render
-    rv = template.render(context)
-  File "c:\users\gk616ph\documents\data analytics\python\flask projects\microblog\env\lib\site-packages\jinja2\environment.py", line 1090, in render
-    self.environment.handle_exception()
-  File "c:\users\gk616ph\documents\data analytics\python\flask projects\microblog\env\lib\site-packages\jinja2\environment.py", line 832, in handle_exception
-    reraise(*rewrite_traceback_stack(source=source))
-  File "c:\users\gk616ph\documents\data analytics\python\flask projects\microblog\env\lib\site-packages\jinja2\_compat.py", line 28, in reraise
-    raise value.with_traceback(tb)
-  File "C:\Users\GK616PH\Documents\Data Analytics\Python\Flask projects\microblog\app\templates\errors\404.html", line 1, in top-level template code
-    {% extends "base.html" %}
-  File "C:\Users\GK616PH\Documents\Data Analytics\Python\Flask projects\microblog\app\templates\base.html", line 1, in top-level template code
-    {% extends 'bootstrap/base.html' %}
-  File "c:\users\gk616ph\documents\data analytics\python\flask projects\microblog\env\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 1, in top-level template code
-    {% block doc -%}
-  File "c:\users\gk616ph\documents\data analytics\python\flask projects\microblog\env\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 3, in block "doc"
-    <html{% block html_attribs %}{% endblock html_attribs %}>
-  File "c:\users\gk616ph\documents\data analytics\python\flask projects\microblog\env\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 11, in block "html"
-    {%- endblock metas %}
-  File "c:\users\gk616ph\documents\data analytics\python\flask projects\microblog\env\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 12, in block "body"
-  File "C:\Users\GK616PH\Documents\Data Analytics\Python\Flask projects\microblog\app\templates\base.html", line 17, in block "navbar"
-    <a class="navbar-brand" href="{{ url_for('index') }}">Microblog</a>
-  File "c:\users\gk616ph\documents\data analytics\python\flask projects\microblog\env\lib\site-packages\flask\helpers.py", line 370, in url_for
-    return appctx.app.handle_url_build_error(error, endpoint, values)
-  File "c:\users\gk616ph\documents\data analytics\python\flask projects\microblog\env\lib\site-packages\flask\app.py", line 2215, in handle_url_build_error
+  File "c:\users\gk616ph\documents\data analytics\python\flask projects\microblog\venv\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
     reraise(exc_type, exc_value, tb)
-  File "c:\users\gk616ph\documents\data analytics\python\flask projects\microblog\env\lib\site-packages\flask\_compat.py", line 39, in reraise
+  File "c:\users\gk616ph\documents\data analytics\python\flask projects\microblog\venv\lib\site-packages\flask\_compat.py", line 35, in reraise
     raise value
-  File "c:\users\gk616ph\documents\data analytics\python\flask projects\microblog\env\lib\site-packages\flask\helpers.py", line 358, in url_for
-    endpoint, values, method=method, force_external=external
-  File "c:\users\gk616ph\documents\data analytics\python\flask projects\microblog\env\lib\site-packages\werkzeug\routing.py", line 2179, in build
-    raise BuildError(endpoint, values, method, self)
-werkzeug.routing.BuildError: Could not build url for endpoint 'index'. Did you mean 'main.index' instead?
-2020-07-05 12:33:18,287 INFO: Microblog startup [in C:\Users\GK616PH\Documents\Data Analytics\Python\Flask projects\microblog\app\__init__.py:72]
-2020-07-05 13:21:11,805 INFO: Microblog startup [in C:\Users\GK616PH\Documents\Data Analytics\Python\Flask projects\microblog\app\__init__.py:72]
-2020-07-05 13:27:13,504 INFO: Microblog startup [in C:\Users\GK616PH\Documents\Data Analytics\Python\Flask projects\microblog\app\__init__.py:72]
-2020-07-05 13:36:47,885 INFO: Microblog startup [in C:\Users\GK616PH\Documents\Data Analytics\Python\Flask projects\microblog\app\__init__.py:72]
-2020-07-05 13:39:40,363 INFO: Microblog startup [in C:\Users\GK616PH\Documents\Data Analytics\Python\Flask projects\microblog\app\__init__.py:72]
-2020-07-05 13:48:34,630 INFO: Microblog startup [in C:\Users\GK616PH\Documents\Data Analytics\Python\Flask projects\microblog\app\__init__.py:74]
-2020-07-05 13:53:24,646 INFO: Microblog startup [in C:\Users\GK616PH\Documents\Data Analytics\Python\Flask projects\microblog\app\__init__.py:74]
-2020-07-05 13:54:14,630 INFO: Microblog startup [in C:\Users\GK616PH\Documents\Data Analytics\Python\Flask projects\microblog\app\__init__.py:74]
-2020-07-05 13:55:32,336 INFO: Microblog startup [in C:\Users\GK616PH\Documents\Data Analytics\Python\Flask projects\microblog\app\__init__.py:74]
+  File "c:\users\gk616ph\documents\data analytics\python\flask projects\microblog\venv\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\gk616ph\documents\data analytics\python\flask projects\microblog\venv\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\GK616PH\Documents\Data Analytics\Python\Flask projects\microblog\app\auth\routes.py", line 19, in login
+    user = User.query.filter_by(username=form.username.data).first()
+  File "c:\users\gk616ph\documents\data analytics\python\flask projects\microblog\venv\lib\site-packages\sqlalchemy\orm\query.py", line 2755, in first
+    ret = list(self[0:1])
+  File "c:\users\gk616ph\documents\data analytics\python\flask projects\microblog\venv\lib\site-packages\sqlalchemy\orm\query.py", line 2547, in __getitem__
+    return list(res)
+  File "c:\users\gk616ph\documents\data analytics\python\flask projects\microblog\venv\lib\site-packages\sqlalchemy\orm\query.py", line 2855, in __iter__
+    return self._execute_and_instances(context)
+  File "c:\users\gk616ph\documents\data analytics\python\flask projects\microblog\venv\lib\site-packages\sqlalchemy\orm\query.py", line 2878, in _execute_and_instances
+    result = conn.execute(querycontext.statement, self._params)
+  File "c:\users\gk616ph\documents\data analytics\python\flask projects\microblog\venv\lib\site-packages\sqlalchemy\engine\base.py", line 945, in execute
+    return meth(self, multiparams, params)
+  File "c:\users\gk616ph\documents\data analytics\python\flask projects\microblog\venv\lib\site-packages\sqlalchemy\sql\elements.py", line 263, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "c:\users\gk616ph\documents\data analytics\python\flask projects\microblog\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1053, in _execute_clauseelement
+    compiled_sql, distilled_params
+  File "c:\users\gk616ph\documents\data analytics\python\flask projects\microblog\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1189, in _execute_context
+    context)
+  File "c:\users\gk616ph\documents\data analytics\python\flask projects\microblog\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1402, in _handle_dbapi_exception
+    exc_info
+  File "c:\users\gk616ph\documents\data analytics\python\flask projects\microblog\venv\lib\site-packages\sqlalchemy\util\compat.py", line 203, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "c:\users\gk616ph\documents\data analytics\python\flask projects\microblog\venv\lib\site-packages\sqlalchemy\util\compat.py", line 186, in reraise
+    raise value.with_traceback(tb)
+  File "c:\users\gk616ph\documents\data analytics\python\flask projects\microblog\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1182, in _execute_context
+    context)
+  File "c:\users\gk616ph\documents\data analytics\python\flask projects\microblog\venv\lib\site-packages\sqlalchemy\engine\default.py", line 470, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such table: user [SQL: 'SELECT user.id AS user_id, user.username AS user_username, user.email AS user_email, user.password_hash AS user_password_hash, user.about_me AS user_about_me, user.last_seen AS user_last_seen \nFROM user \nWHERE user.username = ?\n LIMIT ? OFFSET ?'] [parameters: ('neil', 1, 0)]
+2020-07-05 22:21:26,852 INFO: Microblog startup [in C:\Users\GK616PH\Documents\Data Analytics\Python\Flask projects\microblog\app\__init__.py:74]
+2020-07-05 22:22:33,231 INFO: Microblog startup [in C:\Users\GK616PH\Documents\Data Analytics\Python\Flask projects\microblog\app\__init__.py:74]
+2020-07-05 22:24:23,598 INFO: Microblog startup [in C:\Users\GK616PH\Documents\Data Analytics\Python\Flask projects\microblog\app\__init__.py:74]
+2020-07-05 22:25:55,774 INFO: Microblog startup [in C:\Users\GK616PH\Documents\Data Analytics\Python\Flask projects\microblog\app\__init__.py:74]

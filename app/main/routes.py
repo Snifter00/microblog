@@ -10,7 +10,7 @@ from app.translate import translate
 from app.main import bp
 
 
-@bp.before_request
+@bp.before_app_request
 def before_request():
     if current_user.is_authenticated:
         current_user.last_seen = datetime.utcnow()
@@ -24,7 +24,11 @@ def before_request():
 def index():
     form = PostForm()
     if form.validate_on_submit():
-        post = Post(body=form.post.data, author=current_user)
+        language = guess_language(form.post.data)
+        if language == 'UNKNOWN' or len(language) > 5:
+            language = ''
+        post = Post(body=form.post.data, author=current_user,
+                    language=language)
         db.session.add(post)
         db.session.commit()
         flash(_('Your post is now live!'))
@@ -62,10 +66,10 @@ def user(username):
     page = request.args.get('page', 1, type=int)
     posts = user.posts.order_by(Post.timestamp.desc()).paginate(
         page, current_app.config['POSTS_PER_PAGE'], False)
-    next_url = url_for('main.user', username=user.username, page=posts.next_num) \
-        if posts.has_next else None
-    prev_url = url_for('main.user', username=user.username, page=posts.prev_num) \
-        if posts.has_prev else None
+    next_url = url_for('main.user', username=user.username,
+                       page=posts.next_num) if posts.has_next else None
+    prev_url = url_for('main.user', username=user.username,
+                       page=posts.prev_num) if posts.has_prev else None
     form = EmptyForm()
     return render_template('user.html', user=user, posts=posts.items,
                            next_url=next_url, prev_url=prev_url, form=form)
@@ -115,7 +119,7 @@ def unfollow(username):
     if form.validate_on_submit():
         user = User.query.filter_by(username=username).first()
         if user is None:
-            flash(_('User %(username)s is not found.', username=username))
+            flash(_('User %(username)s not found.', username=username))
             return redirect(url_for('main.index'))
         if user == current_user:
             flash(_('You cannot unfollow yourself!'))
