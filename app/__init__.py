@@ -6,10 +6,10 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from flask_login import LoginManager
 from flask_mail import Mail
-from config import Config
 from flask_bootstrap import Bootstrap
 from flask_moment import Moment
 from flask_babel import Babel, lazy_gettext as _l
+from config import Config
 
 db = SQLAlchemy()
 migrate = Migrate()
@@ -35,7 +35,7 @@ def create_app(config_class=Config):
     babel.init_app(app)
 
     from app.errors import bp as errors_bp
-    app.register_blueprint(errors_bp)  # <-- added below the import to avoid circular dependencies
+    app.register_blueprint(errors_bp)
 
     from app.auth import bp as auth_bp
     app.register_blueprint(auth_bp, url_prefix='/auth')
@@ -47,7 +47,8 @@ def create_app(config_class=Config):
         if app.config['MAIL_SERVER']:
             auth = None
             if app.config['MAIL_USERNAME'] or app.config['MAIL_PASSWORD']:
-                auth = (app.config['MAIL_USERNAME'], app.config['MAIL_PASSWORD'])
+                auth = (app.config['MAIL_USERNAME'],
+                        app.config['MAIL_PASSWORD'])
             secure = None
             if app.config['MAIL_USE_TLS']:
                 secure = ()
@@ -61,10 +62,11 @@ def create_app(config_class=Config):
 
         if not os.path.exists('logs'):
             os.mkdir('logs')
-        file_handler = RotatingFileHandler('logs/microblog.log', maxBytes=10240,
-                                           backupCount=10)
+        file_handler = RotatingFileHandler('logs/microblog.log',
+                                           maxBytes=10240, backupCount=10)
         file_handler.setFormatter(logging.Formatter(
-            '%(asctime)s %(levelname)s: %(message)s [in %(pathname)s:%(lineno)d]'))
+            '%(asctime)s %(levelname)s: %(message)s '
+            '[in %(pathname)s:%(lineno)d]'))
         file_handler.setLevel(logging.INFO)
         app.logger.addHandler(file_handler)
 

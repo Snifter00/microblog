@@ -1,32 +1,25 @@
 from datetime import datetime
 from hashlib import md5
-from app import db, login
+from time import time
 from flask import current_app
 from flask_login import UserMixin
 from werkzeug.security import generate_password_hash, check_password_hash
-from time import time
 import jwt
+from app import db, login
 
 
-# The following sets up an auxillary 'association table'.
-# This is needed to relate Users to other Users.
-followers = db.Table('followers',
-                     db.Column('follower_id', db.Integer, db.ForeignKey('user.id')),
-                     db.Column('followed_id', db.Integer, db.ForeignKey('user.id'))
-                     )
+followers = db.Table(
+    'followers',
+    db.Column('follower_id', db.Integer, db.ForeignKey('user.id')),
+    db.Column('followed_id', db.Integer, db.ForeignKey('user.id'))
+)
 
 
 class User(UserMixin, db.Model):
-    """Inherits db.Model from Flask-SQLAlchemy, where it is
-    a base class for all models. The following code defines
-    the database schema."""
-
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(64), index=True, unique=True)
     email = db.Column(db.String(120), index=True, unique=True)
     password_hash = db.Column(db.String(128))
-    # __tablename__= string to overide default snake_case table name, e.g. 'user'
-    # posts, below, sets a one-to-many relationship from User to Post using 'author' as the key.
     posts = db.relationship('Post', backref='author', lazy='dynamic')
     about_me = db.Column(db.String(140))
     last_seen = db.Column(db.DateTime, default=datetime.utcnow)
@@ -37,7 +30,6 @@ class User(UserMixin, db.Model):
         backref=db.backref('followers', lazy='dynamic'), lazy='dynamic')
 
     def __repr__(self):
-        """This tells python how to print object of this class"""
         return '<User {}>'.format(self.username)
 
     def set_password(self, password):
@@ -48,7 +40,8 @@ class User(UserMixin, db.Model):
 
     def avatar(self, size):
         digest = md5(self.email.lower().encode('utf-8')).hexdigest()
-        return 'http://www.gravatar.com/avatar/{}?d=identicon&s={}'.format(digest, size)
+        return 'https://www.gravatar.com/avatar/{}?d=identicon&s={}'.format(
+            digest, size)
 
     def follow(self, user):
         if not self.is_following(user):
@@ -63,7 +56,6 @@ class User(UserMixin, db.Model):
             followers.c.followed_id == user.id).count() > 0
 
     def followed_posts(self):
-        # 'query' is a SQLAlchemy object
         followed = Post.query.join(
             followers, (followers.c.followed_id == Post.user_id)).filter(
                 followers.c.follower_id == self.id)
@@ -73,14 +65,14 @@ class User(UserMixin, db.Model):
     def get_reset_password_token(self, expires_in=600):
         return jwt.encode(
             {'reset_password': self.id, 'exp': time() + expires_in},
-            current_app.config['SECRET_KEY'], algorithm='HS256').decode('utf-8')
+            current_app.config['SECRET_KEY'],
+            algorithm='HS256').decode('utf-8')
 
     @staticmethod
     def verify_reset_password_token(token):
         try:
             id = jwt.decode(token, current_app.config['SECRET_KEY'],
                             algorithms=['HS256'])['reset_password']
-        # changed the following line from original due to bare except error.
         except Exception:
             return
         return User.query.get(id)
@@ -96,6 +88,7 @@ class Post(db.Model):
     body = db.Column(db.String(140))
     timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+    language = db.Column(db.String(5))
 
     def __repr__(self):
         return '<Post {}>'.format(self.body)
