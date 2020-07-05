@@ -96,7 +96,7 @@ def follow(username):
         user = User.query.filter_by(username=username).first()
         if user is None:
             flash(_('User %(username)s not found.', username=username))
-            return redirect(url_for('index'))
+            return redirect(url_for('main.index'))
         if user == current_user:
             flash(_('You cannot follow yourself!'))
             return redirect(url_for('main.user', username=username))

@@ -1,5 +1,5 @@
-from flask import Bluerprint
+from flask import Blueprint
 
-bp = Bluerprint('main', __name__)
+bp = Blueprint('main', __name__)
 
 from app.main import routes

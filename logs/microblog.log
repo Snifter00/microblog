@@ -1,4 +1,4 @@
-2020-06-16 21:59:33,220 ERROR: Exception on /favicon.ico [GET] [in c:\users\gk616ph\documents\data analytics\python\flask projects\microblog\env\lib\site-packages\flask\app.py:1891]
+2020-07-05 12:26:59,260 ERROR: Exception on /favicon.ico [GET] [in c:\users\gk616ph\documents\data analytics\python\flask projects\microblog\env\lib\site-packages\flask\app.py:1891]
 Traceback (most recent call last):
   File "c:\users\gk616ph\documents\data analytics\python\flask projects\microblog\env\lib\site-packages\flask\app.py", line 1949, in full_dispatch_request
     rv = self.dispatch_request()
@@ -23,8 +23,8 @@ Traceback (most recent call last):
     return self.handle_http_exception(e)
   File "c:\users\gk616ph\documents\data analytics\python\flask projects\microblog\env\lib\site-packages\flask\app.py", line 1743, in handle_http_exception
     return handler(e)
-  File "C:\Users\GK616PH\Documents\Data Analytics\Python\Flask projects\microblog\app\errors.py", line 7, in not_found_error
-    return render_template('404.html'), 404
+  File "C:\Users\GK616PH\Documents\Data Analytics\Python\Flask projects\microblog\app\errors\handlers.py", line 8, in not_found_error
+    return render_template('errors/404.html'), 404
   File "c:\users\gk616ph\documents\data analytics\python\flask projects\microblog\env\lib\site-packages\flask\templating.py", line 140, in render_template
     ctx.app,
   File "c:\users\gk616ph\documents\data analytics\python\flask projects\microblog\env\lib\site-packages\flask\templating.py", line 120, in _render
@@ -35,36 +35,29 @@ Traceback (most recent call last):
     reraise(*rewrite_traceback_stack(source=source))
   File "c:\users\gk616ph\documents\data analytics\python\flask projects\microblog\env\lib\site-packages\jinja2\_compat.py", line 28, in reraise
     raise value.with_traceback(tb)
-  File "C:\Users\GK616PH\Documents\Data Analytics\Python\Flask projects\microblog\app\templates\404.html", line 1, in top-level template code
+  File "C:\Users\GK616PH\Documents\Data Analytics\Python\Flask projects\microblog\app\templates\errors\404.html", line 1, in top-level template code
     {% extends "base.html" %}
-  File "c:\users\gk616ph\documents\data analytics\python\flask projects\microblog\env\lib\site-packages\jinja2\environment.py", line 832, in handle_exception
-    reraise(*rewrite_traceback_stack(source=source))
-  File "c:\users\gk616ph\documents\data analytics\python\flask projects\microblog\env\lib\site-packages\jinja2\_compat.py", line 28, in reraise
-    raise value.with_traceback(tb)
-  File "C:\Users\GK616PH\Documents\Data Analytics\Python\Flask projects\microblog\app\templates\base.html", line 55, in template
-    {% endblock}
-jinja2.exceptions.TemplateSyntaxError: unexpected '}'
-2020-06-16 22:00:33,413 INFO: Microblog startup [in C:\Users\GK616PH\Documents\Data Analytics\Python\Flask projects\microblog\app\__init__.py:49]
-2020-06-16 23:14:07,212 INFO: Microblog startup [in C:\Users\GK616PH\Documents\Data Analytics\Python\Flask projects\microblog\app\__init__.py:52]
-2020-06-16 23:14:29,600 ERROR: Exception on / [GET] [in c:\users\gk616ph\documents\data analytics\python\flask projects\microblog\env\lib\site-packages\flask\app.py:1891]
-Traceback (most recent call last):
-  File "c:\users\gk616ph\documents\data analytics\python\flask projects\microblog\env\lib\site-packages\flask\app.py", line 2446, in wsgi_app
-    response = self.full_dispatch_request()
-  File "c:\users\gk616ph\documents\data analytics\python\flask projects\microblog\env\lib\site-packages\flask\app.py", line 1951, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "c:\users\gk616ph\documents\data analytics\python\flask projects\microblog\env\lib\site-packages\flask\app.py", line 1820, in handle_user_exception
+  File "C:\Users\GK616PH\Documents\Data Analytics\Python\Flask projects\microblog\app\templates\base.html", line 1, in top-level template code
+    {% extends 'bootstrap/base.html' %}
+  File "c:\users\gk616ph\documents\data analytics\python\flask projects\microblog\env\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 1, in top-level template code
+    {% block doc -%}
+  File "c:\users\gk616ph\documents\data analytics\python\flask projects\microblog\env\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 3, in block "doc"
+    <html{% block html_attribs %}{% endblock html_attribs %}>
+  File "c:\users\gk616ph\documents\data analytics\python\flask projects\microblog\env\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 11, in block "html"
+    {%- endblock metas %}
+  File "c:\users\gk616ph\documents\data analytics\python\flask projects\microblog\env\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 12, in block "body"
+  File "C:\Users\GK616PH\Documents\Data Analytics\Python\Flask projects\microblog\app\templates\base.html", line 17, in block "navbar"
+    <a class="navbar-brand" href="{{ url_for('index') }}">Microblog</a>
+  File "c:\users\gk616ph\documents\data analytics\python\flask projects\microblog\env\lib\site-packages\flask\helpers.py", line 370, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "c:\users\gk616ph\documents\data analytics\python\flask projects\microblog\env\lib\site-packages\flask\app.py", line 2215, in handle_url_build_error
     reraise(exc_type, exc_value, tb)
   File "c:\users\gk616ph\documents\data analytics\python\flask projects\microblog\env\lib\site-packages\flask\_compat.py", line 39, in reraise
     raise value
-  File "c:\users\gk616ph\documents\data analytics\python\flask projects\microblog\env\lib\site-packages\flask\app.py", line 1947, in full_dispatch_request
-    rv = self.preprocess_request()
-  File "c:\users\gk616ph\documents\data analytics\python\flask projects\microblog\env\lib\site-packages\flask\app.py", line 2241, in preprocess_request
-    rv = func()
-  File "C:\Users\GK616PH\Documents\Data Analytics\Python\Flask projects\microblog\app\routes.py", line 18, in before_request
-    g.locale = str(get_locale())
-  File "c:\users\gk616ph\documents\data analytics\python\flask projects\microblog\env\lib\site-packages\flask_babel\__init__.py", line 251, in get_locale
-    rv = babel.locale_selector_func()
-  File "C:\Users\GK616PH\Documents\Data Analytics\Python\Flask projects\microblog\app\__init__.py", line 57, in get_locale
-    return request.accept_languages.best_match(app.config['LANGUAGES'])
-KeyError: 'LANGUAGES'
-2020-06-16 23:15:36,417 INFO: Microblog startup [in C:\Users\GK616PH\Documents\Data Analytics\Python\Flask projects\microblog\app\__init__.py:52]
+  File "c:\users\gk616ph\documents\data analytics\python\flask projects\microblog\env\lib\site-packages\flask\helpers.py", line 358, in url_for
+    endpoint, values, method=method, force_external=external
+  File "c:\users\gk616ph\documents\data analytics\python\flask projects\microblog\env\lib\site-packages\werkzeug\routing.py", line 2179, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'index'. Did you mean 'main.index' instead?
+2020-07-05 12:33:18,287 INFO: Microblog startup [in C:\Users\GK616PH\Documents\Data Analytics\Python\Flask projects\microblog\app\__init__.py:72]
+2020-07-05 13:21:11,805 INFO: Microblog startup [in C:\Users\GK616PH\Documents\Data Analytics\Python\Flask projects\microblog\app\__init__.py:72]

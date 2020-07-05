@@ -1,7 +1,7 @@
-''' Log in form '''
+from flask import request
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, BooleanField, SubmitField, TextAreaField
-from wtforms.validators import DataRequired, ValidationError, Email, EqualTo, Length
+from wtforms.validators import DataRequired, ValidationError, Length
 from flask_babel import lazy_gettext as _l
 from app.models import User
 
